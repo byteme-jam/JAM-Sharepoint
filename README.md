@@ -19,6 +19,25 @@ import com.codename1.ui.util.Resources;
  *
  * @author Your name here
  */
+/**
+ * Your application code goes here
+ */
+
+package userclasses;
+
+import java.net.*;
+
+import generated.StateMachineBase;
+
+import com.codename1.ui.*; 
+import com.codename1.ui.events.*;
+import com.codename1.ui.layouts.BorderLayout;
+import com.codename1.ui.util.Resources;
+
+/**
+ *
+ * @author Your name here
+ */
 public class StateMachine extends StateMachineBase {
     public StateMachine(String resFile) {
         super(resFile);
@@ -30,7 +49,7 @@ public class StateMachine extends StateMachineBase {
      * this method should be used to initialize variables instead of
      * the constructor/class scope to avoid race conditions
      */
-	protected void initVars(Resources res){
+	/*protected void initVars(Resources res){
 	}
 
     @Override
@@ -91,8 +110,8 @@ public class StateMachine extends StateMachineBase {
 
     
     }
-
-    public static void openWebpage(URI uri) {
+*/
+    /*public static void openWebpage(URI uri) {
         Desktop desktop = Desktop.isDesktopSupported() ? Desktop.getDesktop() : null;
         if (desktop != null && desktop.isSupported(Desktop.Action.BROWSE)) {
             try {
@@ -109,27 +128,18 @@ public class StateMachine extends StateMachineBase {
         } catch (URISyntaxException e) {
             e.printStackTrace();
         }
-    }
+    }*/
     
-    @Override
     protected void onResources_ButtonAction(Component c, ActionEvent event) {
-    	{
-    		URI hna = new URI("http://www.holynames-sea.org/");
-    		openWebpage(hna);
-
+    
+    		Form f = new Form("Hna");
+    		Button d = new Button("Show Dialog");
+    		f.addComponent(d);
+    		d.addActionListener(new ActionListener()
+    		{
+    			public void actionPerformed(ActionEvent ev) {
+    				Dialog.show("http://www.holynames-sea.org/",null, null);
+    			}
+    		});
     	}
-    
-    }
-
-    @Override
-    protected void onResources_Button1Action(Component c, ActionEvent event) {
-    		
-    
-    }
-
-    @Override
-    protected void onResources_Button2Action(Component c, ActionEvent event) {
-
-    
-    }
 }
