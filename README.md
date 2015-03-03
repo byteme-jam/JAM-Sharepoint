@@ -7,33 +7,16 @@ This is our code for sharepoint
 
 package userclasses;
 
-import java.net.*;
+//import java.net.*;
 
 import generated.StateMachineBase;
 
 import com.codename1.ui.*; 
-import com.codename1.ui.events.*;
-import com.codename1.ui.util.Resources;
-
-/**
- *
- * @author Your name here
- */
-/**
- * Your application code goes here
- */
-
-package userclasses;
-
-import java.net.*;
-
-import generated.StateMachineBase;
-
-import com.codename1.ui.*; 
+import com.codename1.ui.Component;
+import com.codename1.ui.Dialog;
 import com.codename1.ui.events.*;
 import com.codename1.ui.layouts.BorderLayout;
 import com.codename1.ui.util.Resources;
-
 /**
  *
  * @author Your name here
@@ -75,17 +58,6 @@ public class StateMachine extends StateMachineBase {
     
     }
 
-    @Override
-    protected void onResources_MultiListAction(Component c, ActionEvent event) {
-
-    
-    }
-
-    @Override
-    protected void onCalendar_ButtonAction(Component c, ActionEvent event) {
-
-    
-    }
 
     @Override
     protected void onMain_TeachersAction(Component c, ActionEvent event) {
@@ -93,11 +65,6 @@ public class StateMachine extends StateMachineBase {
     
     }
 
-    @Override
-    protected void onMain_CalendarAction(Component c, ActionEvent event) {
-
-    
-    }
 
     @Override
     protected void onMain_ResourcesAction(Component c, ActionEvent event) {
@@ -105,41 +72,37 @@ public class StateMachine extends StateMachineBase {
     
     }
 
-    @Override
-    protected void onCalendar_Calendar1Action(Component c, ActionEvent event) {
-
-    
-    }
+  
 */
-    /*public static void openWebpage(URI uri) {
-        Desktop desktop = Desktop.isDesktopSupported() ? Desktop.getDesktop() : null;
-        if (desktop != null && desktop.isSupported(Desktop.Action.BROWSE)) {
-            try {
-                desktop.browse(uri);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-    public static void openWebpage(URL url) {
-        try {
-            openWebpage(url.toURI());
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
-        }
-    }*/
+    
     
     protected void onResources_ButtonAction(Component c, ActionEvent event) {
     
-    		Form f = new Form("Hna");
-    		Button d = new Button("Show Dialog");
-    		f.addComponent(d);
-    		d.addActionListener(new ActionListener()
-    		{
-    			public void actionPerformed(ActionEvent ev) {
-    				Dialog.show("http://www.holynames-sea.org/",null, null);
-    			}
-    		});
-    	}
+    	
+    	super.onResources_ButtonAction(c, event);
+    	Dialog.show("Click the link","http://www.holynames-sea.org/", "Done", null);
+    }
+   
+  
+    
+    protected void onResources_Button1Action(Component c, ActionEvent event) {
+    	super.onResources_ButtonAction(c, event);
+    	Dialog.show("Click the link","https://sms.holynames-sea.org/guardian/home.html", "Done", null);
+    
+    }
+
+    
+    protected void onResources_Button2Action(Component c, ActionEvent event) {
+    	super.onResources_ButtonAction(c, event);
+    	Dialog.show("Click the link","https://holynamesseattle-my.sharepoint.com", "Done", null);
+    
+    }
 }
+    
+
+    
+    	
+  
+ 
+
+
